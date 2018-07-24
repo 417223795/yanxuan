@@ -65,6 +65,7 @@
           <span class="click-more-text">更多精彩</span>
           <span class="line-right"></span>
         </div>
+        <!--我们这里可以动态的添加相应的样式-->
         <div class="topic-bottom-list-wrap" :style="isShow?'display: block':'display: none'">
           <div class="topic-bottom-list" v-for="(item, index) in findMores" :key="index">
             <img :src="item.itemPicUrl">

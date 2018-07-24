@@ -24,19 +24,24 @@ export default {
   computed: {
     ...mapState(['newItemLists', 'popularItemLists']),
     list () {
-      if (this.index === 1) {
+      // 注意这里使用一行代码就行
+      return this.index === 1 ? this.newItemLists : this.popularItemLists
+      /* if (this.index === 1) {
         return this.newItemLists
       } else {
         return this.popularItemLists
-      }
+      } */
     }
   },
   mounted () {
     this.$nextTick(() => {
       setTimeout(() => {
+        // 注意，我对轮播组件进行了复用，但是我们在创建轮播的时候不知道是给哪个容器创建的滑动，所以我们在这里需要进行判断
         /* eslint-disable no-new */
         new BScroll(this.index === 1 ? '.firstSwiper' : '.secondSwiper', {
+          // scrollX为true时，是使其x轴可以滑动
           scrollX: true,
+          // 点击到轮播时也可以进行滑动
           click: true
         })
       }, 1000)

@@ -55,6 +55,8 @@
       </li>
     </ul>
     <cut-off></cut-off>
+    <!--我们这里添加上：key之后会显示报有可能发生未知错误的警告，所以这里不添加之后没有影响，
+    我们添加：key只是给标签添加一个标识，只是vue中想要我们只有做，但是不添加标识不会显示影响-->
     <div v-for="index in 2">
       <cut-off-text></cut-off-text>
       <swiper-list :index="index"></swiper-list>
@@ -202,19 +204,19 @@ export default {
     }
     .recommend-wrap-list-first{
       float: left;
-      background-image: url("./images/1.png");
+      background-image: url("/images/1.png");
     }
     .recommend-wrap-list-second{
       float:right;
-      background-image: url("./images/2.png");
+      background-image: url("/images/2.png");
     }
     .recommend-wrap-list-third{
       float: left;
-      background-image: url("./images/3.png");
+      background-image: url("/images/3.png");
     }
     .recommend-wrap-list-fourth{
       float:right;
-      background-image: url("./images/4.png");
+      background-image: url("/images/4.png");
     }
   }
   .flash-sale{

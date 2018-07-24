@@ -36,6 +36,7 @@ export default new VueRouter({
             showFooter: true
           }
         },
+        // 注意这里是用params传递参数
         {
           path: '/main/living:index',
           // params: ,

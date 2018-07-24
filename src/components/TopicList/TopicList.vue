@@ -37,6 +37,9 @@ export default {
   computed: {
     ...mapState(['recommend'])
   },
+  // 注意这里使用的是监视，监视的是属性，vel是监视的属性里面的数值。
+  // 我们这里可以监视属性，然后对其进行赋值操作，使其数据变化之后获取新的数值
+  // 监视之后是会重新渲染页面的
   watch: {
     recommend (vel) {
       this.newRecommend = vel.recommends

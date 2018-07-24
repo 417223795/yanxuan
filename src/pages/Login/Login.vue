@@ -1,6 +1,7 @@
 <template>
   <div class="wrap">
     <header>
+      <!-- 我们在全局已经配置了router所以这里可以直接使用-->
       <i class="iconfont icon-shouye1 header-icon" @click="$router.replace('/main')"></i>
       网易严选
       <i class="iconfont icon-gouwuche header-icon" @click="$router.replace('/cart')"></i>

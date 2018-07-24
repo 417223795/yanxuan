@@ -110,7 +110,6 @@ export default {
             .arrow{
               width: 67/@rem;
               height: 67/@rem;
-              background-image: url("./images/2.png");
               background-size: cover;
               margin: .8rem auto 0;
             }

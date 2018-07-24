@@ -28,14 +28,17 @@
 <script>
 export default {
   computed: {
+    // 这里是获取params里面的index参数，这样就可以获取数据，判断下面的footer是否显示
     mainIndex () {
       return this.$route.params.index
     }
   },
   methods: {
+    // replace跳转路由。不会保存历史记录，即上面点击之后会执行这里的操作进行跳转
     goto (path) {
       this.$router.replace(path)
     },
+    // vue中所有的组件都有$route属性，我们可以直接操作里面的属性赋值地址
     isRoute (path) {
       return this.$route.path === path
     }

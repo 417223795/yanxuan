@@ -1,3 +1,4 @@
+// 在这里进行的是全局的配置，这样就可以在全局中使用这里面的东西了
 import Vue from 'vue'
 import App from './App'
 import router from './router'

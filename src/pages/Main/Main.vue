@@ -25,8 +25,10 @@
               :class="{on:routeIndex === mainIndex}"
               v-for="(item, mainIndex) in shortList"
               :key="(mainIndex)"
-              :shortList="shortList"
           >
+            <!--mainIndex传递给了地址栏里面，传递给了vuex里面的params数据里
+            这样我们就可以直接把当前的index和params里面的index相互关联起来
+            所以我们完全可以在mainliving组件里直接通过params里的index进行判断显示所对应的数据-->
             <router-link :to="`/main/living${mainIndex}`" v-if="shortList.length">{{item.name}}</router-link>
           </li>
           <!--<li class="tab-item" :class="{on:isRoute('/main/living')}">

@@ -9,11 +9,15 @@
     <div class="content">
       <div class="content-left">
         <ul ref="content">
+          <!--注意我们这里需要的是获取点击时显示的index，"{on:index === liIndex}"这里必须使用的是{}因为我们只是不确定是不是需要它-->
           <li v-for="(item,index) in categorys" :key="index" @click="showData(index)" :class="{on:index === liIndex}">
             {{item.name}}
           </li>
         </ul>
       </div>
+      <!--我们这里v-if可以设置在有数据的时候显示当前的页面，防止了页面一开始加载的时候没有数据发生报错的情况
+      但是我这里判断的时候不能只是判断数据，需要判断的是长度，因为我们需求是在获取到全部数据之后显示当前的页面
+      需要注意的是数值和对象的判断的方式是不一样的-->
       <div class="content-right-wrap" v-if="categorys.length">
         <div class="content-right">
           <img class="content-right-images" :src="categorys[liIndex].wapBannerUrl">
@@ -40,7 +44,7 @@ import {mapState} from 'vuex'
 export default {
   data () {
     return {
-      // 当前的index
+      // 当前的index，我们这里设置的是0，是因为当我们页面初始渲染的时候必须显示的是第一个
       liIndex: 0
     }
   },
@@ -57,6 +61,7 @@ export default {
   },
   watch: {
     categorys () {
+      // $nextTick是当前页面全部的dom节点加载完成之后进行下面的操作
       this.$nextTick(() => {
         /* eslint-disable no-new */
         new BScroll('.content-left', {

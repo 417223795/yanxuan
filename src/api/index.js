@@ -20,6 +20,8 @@ export const reqFindMore = () => ajax('/findMore')
 
 export const reqCategoryData = () => ajax('/categoryData')
 
+// 上面的是使用mock数据发送的请求，获取的请求数据
+// 下面是使用的之前项目的后台，模拟接收数据，发送ajax请求进行的交互
 export const reqSendCode = phone => ajax('/api/sendcode', {phone})
 export const reqSmsLogin = (phone, code) => ajax('/api/login_sms', {phone, code}, 'POST')
 export const reqUser = () => ajax(`/api/userinfo`)

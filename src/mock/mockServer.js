@@ -3,6 +3,7 @@ import msite from './msite'
 import shiwu from './shiwu.json'
 import category from './category.json'
 
+// 这里是使用的mock模拟的后台数据进行的获取数据的操作，一般这里我们都会设置一个code来确定数据接收成功
 Mock.mock('/focusList', {code: 0, data: msite.focusList})
 Mock.mock('/headCates', {code: 0, data: msite.headCateList})
 Mock.mock('/tagList', {code: 0, data: msite.tagList})
